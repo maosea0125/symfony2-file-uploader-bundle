@@ -105,11 +105,12 @@ class FileUploader
         @mkdir($uploadDir, 0777, true);
         $upload_handler = new \PunkAve\FileUploaderBundle\BlueImp\UploadHandler(
             array(
-                'upload_dir' => $uploadDir, 
-                'upload_url' => $webPath . '/' . $originals['folder'] . '/', 
-                'script_url' => $options['request']->getUri(),
-                'image_versions' => $sizes,
-                'accept_file_types' => $allowedExtensionsRegex,
+                'upload_dir'          => $uploadDir, 
+                'upload_url'          => $webPath . '/' . $originals['folder'] . '/', 
+                'script_url'          => $options['request']->getUri(),
+                'image_versions'      => $sizes,
+                'accept_file_types'   => $allowedExtensionsRegex,
+                'max_file_size'       => $options['max_file_size'],
                 'max_number_of_files' => $options['max_number_of_files'],
             ));
 
